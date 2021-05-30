@@ -40,5 +40,17 @@
     "path": "/products/{articleId}",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\Product\\GetProductByIdController::execute",
     "methods": ["GET"]
+  },
+  {
+    "name": "create_bid",
+    "path": "/products/{articleId}/bids",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\Bid\\CreateBidController::execute",
+    "methods": ["POST"]
+  },
+  {
+    "name": "get_bids",
+    "path": "/products/{articleId}/bids",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\Bid\\GetBidsController::execute",
+    "methods": ["GET"]
   }
 ]

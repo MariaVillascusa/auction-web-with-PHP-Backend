@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GetProductByIdController
 {
+
     public function execute(Request $request): Response
     {
         $file = fopen('./../src/Infrastructure/Files/products.csv', "r");
