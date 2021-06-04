@@ -18,15 +18,12 @@ class GetBidsController
         if (false === $file) {
             throw new Exception('File not found');
         }
-        $productId = $request->get('productId');
-        /* //$articleId = (new \IESLaCierva\Entrypoint\Controllers\Product\GetProductByIdController)->execute($request->get('articleId'));
-          $product = new GetProductByIdController;
-          $result = $product->execute($bidId);
-          */
-        $bids = [];
+        $articleId = $request->get('articleId');
+
+
         while (($data = fgetcsv($file, 1000, ',')) !== false) {
-            if ($productId === $data[1]) {
-                $bids = [
+            if ($data[1] === $articleId) {
+                $bids[] = [
                     'bidId' => $data[0],
                     'productId' => $data[1],
                     'currentBid' => $data[2],

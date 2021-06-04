@@ -28,10 +28,11 @@ class GetUserByIdController
         while (($data = fgetcsv($file, 1000, ',')) !== false) {
             if ($data[0] === $userId) {
                 $user = [
-                        'id' => $data[0],
-                        'name' => $data[1],
-                        'email' => $data[2],
-                        'role' => $data[4]
+                    'id' => $data[0],
+                    'name' => $data[1],
+                    'username' => $data[2],
+                    'email' => $data[3],
+                    'role' => $data[5]
                     ];
             }
         }

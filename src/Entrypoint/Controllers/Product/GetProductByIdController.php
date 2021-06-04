@@ -33,7 +33,8 @@ class GetProductByIdController
                     'name' => $data[1],
                     'price' => $data[2],
                     'description' => $data[3],
-                    'image' => $data[4]
+                    'datetime' => $data[4],
+                    'image' => $data[5]
                     ];
             }
         }

@@ -20,11 +20,12 @@ class GetAllUsersController
 
         while (($data = fgetcsv($file, 1000, ',')) !== false) {
             $users[] = [
-                    'id' => $data[0],
-                    'name' => $data[1],
-                    'email' => $data[2],
-                    'role' => $data[4]
-                ];
+                'id' => $data[0],
+                'name' => $data[1],
+                'username' => $data[2],
+                'email' => $data[3],
+                'role' => $data[5]
+            ];
         }
 
         return new JsonResponse($users);

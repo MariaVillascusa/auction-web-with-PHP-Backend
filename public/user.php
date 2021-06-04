@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 [
                     'id' => $data[0],
                     'name' => $data[1],
-                    'email' => $data[2],
-                    'role' => $data[4]
+                    'username' => $data[2],
+                    'email' => $data[3]
                 ]
             );
         }
@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     [
                         'id' => $data[0],
                         'name' => $data[1],
-                        'email' => $data[2],
-                        'role' => $data[4]
+                        'username' => $data[2],
+                        'email' => $data[3]
                     ]
                 );
             }
@@ -50,19 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $data = json_decode(@file_get_contents('php://input'), true);
 
-    if (isset($data['name']) && isset($data['email'])  && isset($data['password']) && isset($data['role'])) {
-        if (in_array($data['role'], ['Administrador', 'Editor']) === false) {
-            http_response_code(400);
-            echo "Role not allowed";
-        } else {
+    if (isset($data['name']) && isset($data['username']) && isset($data['email'])  && isset($data['password']) && isset($data['role'])) {
+
             if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                fputcsv($file, [uniqid(), $data['name'], $data['email'], $data['password'], $data['role']]);
+                fputcsv($file, [uniqid(), $data['name'], $data['username'], $data['email'], $data['password'],"User"]);
                 http_response_code(201);
             } else {
                 http_response_code(400);
                 echo "Email not valid";
             }
-        }
+
     } else {
         http_response_code(400);
     }
