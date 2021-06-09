@@ -12,10 +12,10 @@ class Product implements \JsonSerializable
     private string $name;
     private Price $price;
     private string $description;
-    private \DateTimeImmutable $datetime;
+    private string $datetime;
     private string $image;
 
-    public function __construct(string $id, string $name, Price $price, string $description, \DateTimeImmutable $datetime, string $image)
+    public function __construct(string $id, string $name, Price $price, string $description, string $datetime, string $image)
     {
         $this->id = $id;
         $this->name = $name;
@@ -25,9 +25,11 @@ class Product implements \JsonSerializable
         $this->image = $image;
     }
 
-    public static function create(string $name, Price $price, string $description, string $image): Product
+//TO-DO REVISAR LO DE LA HORA
+
+    public static function create(string $name, Price $price, string $description, string $datetime, string $image): Product
     {
-        return new self(uniqid(), $name, $price, $description, new \DateTimeImmutable(), $image);
+        return new self(uniqid(), $name, $price, $description, $datetime, $image);
     }
 
     public function id(): string
@@ -50,7 +52,7 @@ class Product implements \JsonSerializable
         return $this->description;
     }
 
-    public function datetime(): \DateTimeImmutable
+    public function datetime(): string
     {
         return $this->datetime;
     }
@@ -67,7 +69,7 @@ class Product implements \JsonSerializable
             'name' => $this->name(),
             'price' => $this->price()->value(),
             'description' => $this->description(),
-            'datetime' => $this->datetime()->format(DATE_ATOM),
+            'datetime' => $this->datetime(),
             'image' => $this->image()
         ];
     }

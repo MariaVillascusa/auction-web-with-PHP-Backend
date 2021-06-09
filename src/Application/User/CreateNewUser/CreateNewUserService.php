@@ -5,7 +5,6 @@ namespace IESLaCierva\Application\User\CreateNewUser;
 use IESLaCierva\Domain\User\User;
 use IESLaCierva\Domain\User\UserRepository;
 use IESLaCierva\Domain\User\ValueObject\Email;
-use IESLaCierva\Domain\User\ValueObject\Role;
 
 class CreateNewUserService
 {
