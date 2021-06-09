@@ -10,24 +10,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GetAllUsersController
 {
+    private GetAllUserService $getAllUserService;
+
+    public function __construct() {
+        $this->getAllUserService = new GetAllUserService(new CsvUserRepository());
+    }
+
 
     public function execute(Request $request): Response
     {
-        $file = fopen('./../src/Infrastructure/Files/users.csv', "r");
-        if (false === $file) {
-            throw new Exception('File not found');
-        }
-
-        while (($data = fgetcsv($file, 1000, ',')) !== false) {
-            $users[] = [
-                'id' => $data[0],
-                'name' => $data[1],
-                'username' => $data[2],
-                'email' => $data[3],
-                'role' => $data[5]
-            ];
-        }
-
+        $users = $this->getAllUserService->execute();
         return new JsonResponse($users);
     }
 }

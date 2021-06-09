@@ -1,5 +1,7 @@
 <?php
 
+use IESLaCierva\Domain\Exceptions\NotFoundException;
+use IESLaCierva\Domain\Exceptions\ParameterNotValid;
 use IESLaCierva\Entrypoint\Routes;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,8 +35,12 @@ try {
     $controller = $controllerResolver->getController($request);
     $arguments = $argumentResolver->getArguments($request, $controller);
     $response = call_user_func_array($controller, $arguments);
+} catch (NotFoundException $e) {
+    $response = new Response($e->getMessage(), Response::HTTP_NOT_FOUND);
+} catch (ParameterNotValid $e) {
+    $response = new Response($e->getMessage(), Response::HTTP_BAD_REQUEST);
 } catch (Exception $e) {
-    $response = new Response('Unexpected error', Response::HTTP_INTERNAL_SERVER_ERROR);
+    $response = new Response($e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
 }
 
 $response->send();

@@ -10,36 +10,15 @@ use Symfony\Component\HttpFoundation\Response;
 
 class GetUserByIdController
 {
-    public function execute(Request $request): Response
+    public function __construct()
     {
-        $file = fopen('./../src/Infrastructure/Files/users.csv', "r");
-        if (false === $file) {
-            throw new Exception('File not found');
-        }
-
-        $userId = $request->get('id');
-
-        if (null === $userId) {
-            return new JsonResponse([], Response::HTTP_BAD_REQUEST);
-        }
-
-        $user = [];
-
-        while (($data = fgetcsv($file, 1000, ',')) !== false) {
-            if ($data[0] === $userId) {
-                $user = [
-                    'id' => $data[0],
-                    'name' => $data[1],
-                    'username' => $data[2],
-                    'email' => $data[3],
-                    'role' => $data[5]
-                    ];
-            }
-        }
-
-        fclose($file);
-        return new JsonResponse($user, count($user) ? Response::HTTP_OK : Response::HTTP_NOT_FOUND);
-
+        $this->service = new GetUserByIdService(new CsvUserRepository());
     }
 
+    public function execute(Request $request): Response
+    {
+        $userId = $request->get('userId');
+        $user = $this->service->execute($userId);
+        return new JsonResponse($user);
+    }
 }

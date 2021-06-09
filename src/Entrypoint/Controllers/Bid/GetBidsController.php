@@ -20,8 +20,9 @@ class GetBidsController
         }
         $articleId = $request->get('articleId');
 
-
+        $bids = [];
         while (($data = fgetcsv($file, 1000, ',')) !== false) {
+
             if ($data[1] === $articleId) {
                 $bids[] = [
                     'bidId' => $data[0],

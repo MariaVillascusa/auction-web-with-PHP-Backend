@@ -8,7 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/index-styles.css">
+  <link rel="stylesheet" href="css/login.css">
   <title>SUBASTAS WEB</title>
 </head>
 
@@ -30,20 +30,31 @@
     <a class="nav-link" id="link" href="#">Sobre nosotros</a>
     <a class="nav-link" id="link" href="register.html">Regístrate</a>
     <a class="nav-link" id="link" href="login.html">Log in</a>
-    
+
   </nav>
   <div class="alert alert-danger d-none" role="alert" id="alert"></div>
 
-  <div>
-    <span id="loading">CARGANDO...</span>
-  </div>
   <div class="container-xxl" id="container">
-        
+    <h1>Inicia sesión</h1>
+    <div class="row g-3 align-items-center" id="login">
+      <form id="form" action="http://localhost:9900/users" method="POST">
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+
+        <button type="button" class="btn bttn" id="btn">Enviar</button>
+      </form>
+    </div>
   </div>
-      <!-- Bootstrap Bundle with Popper -->
+
+  <!-- Bootstrap Bundle with Popper -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script type="module" src="js/chrono.js"></script>
-  <script type="module" src="js/index.js"></script>
-  <script type="module" src="js/articles.js"></script>
+  <script type="module" src="js/login.js"></script>
 
 </body>

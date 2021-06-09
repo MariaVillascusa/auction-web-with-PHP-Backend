@@ -10,26 +10,18 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CreateUserController
 {
+    private CreateNewUserService $service;
+
+    public function __construct()
+    {
+        $this->service = new CreateNewUserService(new CsvUserRepository());
+    }
+
     public function execute(Request $request): Response
     {
-        $data = json_decode(@file_get_contents('php://input'), true);
-
-        if (isset($data['name']) && isset($data['username']) && isset($data['email']) && isset($data['password'])) {
-
-            if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                $file = fopen('./../src/Infrastructure/Files/users.csv', "a");
-                if (false === $file) {
-                    throw new Exception('File not found');
-                }
-                fputcsv($file, [uniqid(), $data['name'], $data['username'], $data['email'], $data['password'],"User"]);
-                fclose($file);
-                return new JsonResponse([], Response::HTTP_CREATED);
-            } else {
-                return new JsonResponse(["error" => "email not valid"], Response::HTTP_BAD_REQUEST);
-            }
-
-        } else {
-            return new JsonResponse(["error" => "Missing parameters"], Response::HTTP_BAD_REQUEST);
-        }
+        $json = $request->getContent();
+        $data = json_decode($json, true);
+        $this->service->execute($data['name'],$data['username'], $data['email'], $data['password']);
+        return new JsonResponse([], Response::HTTP_CREATED);
     }
 }
