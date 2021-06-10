@@ -13,7 +13,7 @@ export function showArticles(data) {
         <h5 class="card-title">${article["name"]}</h5>
         <p class="card-text price">${article["price"]}€</p>
         <p class="card-text datetime">${datetime.toDateString()}</p>
-        <a href="product.html?id=${article["articleId"]}" class="btn bttn click" id="${article["articleId"]}">Pujar</a>
+        <a href="product.html?id=${article["id"]}" class="btn bttn click" id="${article["id"]}">Pujar</a>
       </div>
     </div>
       `;

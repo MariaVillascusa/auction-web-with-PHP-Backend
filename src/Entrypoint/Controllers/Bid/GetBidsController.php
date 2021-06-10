@@ -2,7 +2,7 @@
 
 namespace IESLaCierva\Entrypoint\Controllers\Bid;
 
-use IESLaCierva\Application\Product\GetBids\GetBidService;
+use IESLaCierva\Application\Bid\GetBids\GetBidsService;
 use IESLaCierva\Infrastructure\Files\CsvBidRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,26 +12,18 @@ use IESLaCierva\Entrypoint\Controllers\Product\GetProductByIdController;
 
 class GetBidsController
 {
+
+    private GetBidsService $getBidsService;
+
+    public function __construct(){
+        $this->service = new GetBidsService(new CsvBidRepository());
+    }
+
     public function execute(Request $request): Response
     {
-        $file = fopen('./../src/Infrastructure/Files/bids.csv', "r");
-        if (false === $file) {
-            throw new Exception('File not found');
-        }
-        $articleId = $request->get('articleId');
 
-        $bids = [];
-        while (($data = fgetcsv($file, 1000, ',')) !== false) {
-
-            if ($data[1] === $articleId) {
-                $bids[] = [
-                    'bidId' => $data[0],
-                    'productId' => $data[1],
-                    'currentBid' => $data[2],
-                    'datetime' => $data[3],
-                ];
-            }
-        }
+        $productId = $request->get('articleId');
+        $bids = $this->service->execute($productId);
         return new JsonResponse($bids);
     }
 

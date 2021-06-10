@@ -45,7 +45,7 @@ class CsvProductRepository implements ProductRepository
 
     public function save(Product $product): void
     {
-        $file = fopen(__DIR__ . '/users.csv', "a");
+        $file = fopen(__DIR__ . '/products.csv', "a");
         if (false === $file) {
             throw new Exception('File not found');
         }

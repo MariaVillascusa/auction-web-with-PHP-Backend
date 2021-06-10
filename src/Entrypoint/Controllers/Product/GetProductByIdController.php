@@ -19,7 +19,8 @@ class GetProductByIdController
 
     public function execute(Request $request): Response
     {
-        $id = $request->get('id');
+        $id = $request->get('articleId');
+
         $product = $this->service->execute($id);
         return new JsonResponse($product);
 
