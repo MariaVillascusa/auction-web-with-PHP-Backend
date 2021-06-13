@@ -6,6 +6,18 @@
     "methods": ["GET"]
   },
   {
+    "name": "product",
+    "path": "/product",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\ProductController::execute",
+    "methods": ["GET"]
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\LoginController::execute",
+    "methods": ["GET"]
+  },
+  {
     "name": "get_all_users",
     "path": "/users",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\User\\GetAllUsersController::execute",

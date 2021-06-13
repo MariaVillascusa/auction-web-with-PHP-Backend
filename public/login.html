@@ -16,7 +16,17 @@
 
   <nav class="navbar navbar-dark bg-dark" id='navbar'>
     <div class="container-fluid">
-      <a class="navbar-brand">SUBASTAS WEB</a>
+      <a class="navbar-brand">
+        <h1>SUBASTAS WEB</h1>
+      </a>
+
+      <div id="pages">
+        <a class="nav-link" id="link" href="index.html">Home</a>
+        <a class="nav-link" id="link" href="sell.html">Vender</a>
+        <a class="nav-link" id="link" href="#">Sobre nosotros</a>
+        <a class="nav-link" id="link" href="register.html">Regístrate</a>
+        <a class="nav-link" id="link" href="login.html">Log in</a>
+      </div>
       <form class="d-flex">
         <input class="form-control me-2" id="search" type="search" placeholder="Buscar" aria-label="Search">
         <button class="bttn" id="search-btn" type="submit">Buscar</button>
@@ -24,14 +34,6 @@
     </div>
   </nav>
 
-  <nav class="nav justify-content-center bg-dark" id="nav">
-    <a class="nav-link" id="link" href="index.html">Inicio</a>
-    <a class="nav-link" id="link" href="sell.html">Vender</a>
-    <a class="nav-link" id="link" href="#">Sobre nosotros</a>
-    <a class="nav-link" id="link" href="register.html">Regístrate</a>
-    <a class="nav-link" id="link" href="login.html">Log in</a>
-
-  </nav>
   <div class="alert alert-danger d-none" role="alert" id="alert"></div>
 
   <div class="container-xxl" id="container">
@@ -41,14 +43,14 @@
 
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" name="username">
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username">
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" name="password">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
         </div>
 
-        <button type="button" class="btn bttn" id="btn">Enviar</button>
+        <button type="button" class="btn bttn" id="btn">Entrar</button>
       </form>
     </div>
   </div>

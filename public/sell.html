@@ -16,27 +16,28 @@
 
     <nav class="navbar navbar-dark bg-dark" id='navbar'>
         <div class="container-fluid">
-            <a class="navbar-brand">SUBASTAS WEB</a>
+            <a class="navbar-brand">
+                <h1>SUBASTAS WEB</h1>
+            </a>
+
+            <div id="pages">
+                <a class="nav-link" id="link" href="index.html">Home</a>
+                <a class="nav-link" id="link" href="sell.html">Vender</a>
+                <a class="nav-link" id="link" href="#">Sobre nosotros</a>
+                <a class="nav-link" id="link" href="register.html">Regístrate</a>
+                <a class="nav-link" id="link" href="login.html">Log in</a>
+            </div>
             <form class="d-flex">
                 <input class="form-control me-2" id="search" type="search" placeholder="Buscar" aria-label="Search">
                 <button class="bttn" id="search-btn" type="submit">Buscar</button>
             </form>
         </div>
     </nav>
-
-    <nav class="nav justify-content-center bg-dark" id="nav">
-        <a class="nav-link" id="link" href="index.html">Inicio</a>
-        <a class="nav-link" id="link" href="sell.html">Vender</a>
-        <a class="nav-link" id="link" href="#">Sobre nosotros</a>
-        <a class="nav-link" id="link" href="register.html">Regístrate</a>
-        <a class="nav-link" id="link" href="login.html">Log in</a>
-
-    </nav>
     <div class="alert alert-danger d-none" role="alert" id="alert"></div>
 
 
     <div class="container-xxl" id="container">
-        <h1>¿Qué quieres vender?</h1>
+        <h1>Pon a la venta un artículo</h1>
         <div class="row g-3 align-items-center" id="sell">
             <form id="form" action="http://localhost:9900/users" method="POST">
 
@@ -48,7 +49,7 @@
                     <label for="price" class="form-label">Precio:</label>
                     <input type="text" class="form-control" id="price" name="price">
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="description" class="form-label">Descripción:</label>
                     <input type="" class="form-control" id="description" name="description">
