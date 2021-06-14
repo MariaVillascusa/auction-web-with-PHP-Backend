@@ -22,6 +22,6 @@ class CreateProductController
         $json = $request->getContent();
         $data = json_decode($json, true);
         $this->service->execute($data['name'], $data['price'], $data['description'], $data['datetime'],$data['image']);
-        return new JsonResponse([], Response::HTTP_CREATED);
+        return new JsonResponse('id', Response::HTTP_CREATED);
     }
 }

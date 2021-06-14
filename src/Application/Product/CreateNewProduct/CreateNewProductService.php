@@ -22,5 +22,7 @@ class CreateNewProductService
     {
         $product = Product::create($name, new Price($price), $description, $datetime, $image);
         $this->productRepository->save($product);
+
+        return $product;
     }
 }

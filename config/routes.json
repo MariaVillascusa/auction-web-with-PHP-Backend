@@ -36,12 +36,6 @@
     "methods": ["GET"]
   },
   {
-    "name": "database",
-    "path": "/database",
-    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\DatabaseController::execute",
-    "methods": ["POST"]
-  },
-  {
     "name": "get_all_users",
     "path": "/users",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\User\\GetAllUsersController::execute",

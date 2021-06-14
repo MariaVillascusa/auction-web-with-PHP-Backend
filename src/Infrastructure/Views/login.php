@@ -8,6 +8,7 @@ if (isset($_SESSION['user_id'])) {
 require 'database.php';
 
 if (!empty($_POST['username']) && !empty($_POST['password'])) {
+    echo('HOLA');
     $records = $conn->prepare('SELECT id, username, password FROM users WHERE username = :username');
     $records->bindParam(':username', $_POST['username']);
     $records->execute();
@@ -17,6 +18,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
 
     if (count($results) > 0 && ($_POST['password'] === $results['password'])) {
         $_SESSION['user_id'] = $results['id'];
+        $message = 'SESION INICIADA';
 
     } else {
         $message = 'Sorry, those credentials do not match';
@@ -38,7 +40,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
 
         <h1>Inicia sesión</h1>
         <div class="row g-3 align-items-center" id="login">
-            <form id="form" action="databaseconnect.php" method="POST">
+            <form id="form" action="/login" method="POST">
 
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
