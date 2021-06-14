@@ -18,6 +18,30 @@
     "methods": ["GET"]
   },
   {
+    "name": "logout",
+    "path": "/logout",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\LogoutController::execute",
+    "methods": ["GET"]
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\RegisterController::execute",
+    "methods": ["GET"]
+  },
+  {
+    "name": "sell",
+    "path": "/sell",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\SellController::execute",
+    "methods": ["GET"]
+  },
+  {
+    "name": "database",
+    "path": "/database",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\DatabaseController::execute",
+    "methods": ["POST"]
+  },
+  {
     "name": "get_all_users",
     "path": "/users",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\User\\GetAllUsersController::execute",

@@ -17,7 +17,7 @@ btn.onclick = () => {
   });
   
   createUser(raw,myHeaders)
-  
+
 };
 
 function createUser(raw,headers) {
@@ -29,6 +29,12 @@ function createUser(raw,headers) {
       };
     fetch(DIRECTION, requestOptions)
     .then(response => response.json())
-    .then(result => console.log(result))
+    .then(result => {
+        console.log(result);
+        if (result){
+            alert("Felicidades. Te has registrado!")
+            window.location.href = '/home'
+        }
+    })
     .catch(error => console.log('error', error));
 }

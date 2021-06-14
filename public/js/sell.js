@@ -20,7 +20,8 @@ BTN.onclick = () => {
     image: IMAGE,
   });
   
-  createProduct(raw,myHeaders)
+  createProduct(raw,myHeaders);
+
   
 };
 
@@ -33,6 +34,14 @@ function createProduct(raw,headers) {
       };
     fetch(DIRECTION, requestOptions)
     .then(response => response.json())
-    .then(result => console.log(result))
+    .then(result => {
+        console.log(result)
+        if (result){
+            alert("El producto está siendo subastado")
+            window.location.href = '/home'
+            //PREGUNTAR FORMA DE QUE ME DEVUELVA EL JSON PARA PONER COGER EL ID CREADO Y PASARLO POR PARAETRO A LA URL
+            // -> CONTROLADOR CREATEPRODUCT
+        }
+    })
     .catch(error => console.log('error', error));
 }

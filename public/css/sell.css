@@ -1,6 +1,9 @@
+* {
+  color: #212529;
+}
 
 body{
-  background:#F5F5F7;
+  background: #3f4047;
   font-family: roboto,sans-serif;
 }
 
@@ -21,22 +24,18 @@ a h1{
 h1 {
   text-align: center;
   margin-top: 4rem;
-  color:white;
+  color: white;
+
 }
 
 #navbar {
   padding: 0px;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 2rem;
-}
-
 .bttn,
 #bid-btn {
   border: none;
-  background: #9a90cd;
+  background: #ffca28;
   color: white;
   height: 2.2rem;
   width: 5rem;
@@ -47,27 +46,23 @@ h1 {
 
 .bttn:hover,
 #bid-btn:hover {
-  background: #a8a0ce;
+  background: #fcbe03;
 }
 
 #bid-btn {
   height: 2.5rem;
 }
 
-#buttons {
-  padding: 0.5rem;
-  text-align: center;
-}
 
 #search-btn {
   background-color: #ffca28;
-  color: black;
+  color: #212529;
 }
 
 #search {
-  border-radius: 15px 15px;
+  border-radius: 15px 15px !important;
   color: black;
-  width: 10rem;
+  width: 11rem !important;
   height: 2.2rem;
   margin-right: 1rem;
   margin-top: 0.55rem;
@@ -77,31 +72,21 @@ h1 {
   text-align: center;
   margin: auto;
   width: 60%;
-  background: #4b6cb7; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #182848,
-    #4b6cb7
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #182848,
-    #4b6cb7
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  border-radius: 15px;
+  background: transparent;
   margin-top: 3rem;
   padding: 1.5rem;
   font-size: 1.2rem;
-  box-shadow: 10px 10px 5px 2px rgba(100, 100, 100, 0.26);
+  color: #3f4047;
 }
 
 label {
-  color: white;
   text-align: center;
+  color: white;
+
 }
 
-input {
+form input {
   margin: auto;
-  width: 50% !important;
+  width: 80% !important;
+  border-radius: 0px 0px !important;
 }

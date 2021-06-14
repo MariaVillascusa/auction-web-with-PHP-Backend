@@ -1,5 +1,10 @@
 <?php require_once 'header.php'; ?>
 
+<link rel="stylesheet" href="css/product.css">
+<title>SUBASTAS WEB</title>
+
+<?php require_once 'nav.php'; ?>
+
 <div id="confirm" class="modal">
         <span onclick="document.getElementById('confirm').style.display='none'" class="close"
               title="Close Modal">&times;</span>
@@ -107,8 +112,8 @@
     </div>
 </div>
 <!-- Bootstrap Bundle with Popper -->
-<script type="module" src="js/chrono.js"></script>
-<script type="module" src="js/product.js"></script>
-<script type="module" src="js/articles.js"></script>
+<script type="module" src="/js/chrono.js"></script>
+<script type="module" src="/js/product.js"></script>
+<script type="module" src="/js/articles.js"></script>
 
 <?php require_once 'footer.php'; ?>

@@ -75,7 +75,7 @@ function bid(currentBid) {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        redirect: "follow",
+        //redirect: "follow",
     };
     fetch(BIDS_DIRECTION, requestOptions)
         .then((response) => response.json())

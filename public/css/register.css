@@ -44,7 +44,7 @@ h1 {
 .bttn,
 #bid-btn {
   border: none;
-  background: #d1d0cd;
+  background: #ffca28;
   color: 212529;
   height: 2.2rem;
   width: 5rem;
@@ -53,9 +53,13 @@ h1 {
   margin: 0.5rem;
 }
 
+.register-btn {
+  width: 7rem;
+}
+
 .bttn:hover,
 #bid-btn:hover {
-  background: #38525e;
+  background: #ffbf01;
   color: white;
 }
 
@@ -75,7 +79,6 @@ h1 {
 
 #register {
   text-align: center;
-  background: #0f2027; /* fallback for old browsers */
   background: transparent;
   border-radius: 15px;
   margin-top: 2rem;
