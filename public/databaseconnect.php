@@ -1,46 +1,35 @@
 <?php
 session_start();
 
-$DATABASE_HOST = 'mysql';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = 'admin1234';
-$DATABASE_NAME = 'auction_php';
+$server = 'mysql';
+$username = 'root';
+$password = 'admin1234';
+$database = 'auction_php';
 
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if ( mysqli_connect_errno() ) {
-    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-} else {
-    echo("Conectado a la BBDD");
+try {
+    $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+   
+} catch (PDOException $e) {
+    die('Connection Failed: ' . $e->getMessage());
 }
+if (!empty($_POST['username']) && !empty($_POST['password'])) {
 
-if ( !isset($_POST['username'], $_POST['password']) ) {
-    exit('Por favor rellena los campos de usuario y password!');
-}
+    $records = $conn->prepare('SELECT id, username, password FROM users WHERE username = :username');
+    $records->bindParam(':username', $_POST['username']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
 
-if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = :username')) {
-    $stmt->bind_param('s', $_POST['username']);
-    $stmt->execute();
+    $message = '';
 
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $password);
-        $stmt->fetch();
-
-        if (($_POST['password'] === $password)) {
-
-            session_regenerate_id();
-            $_SESSION['loggedin'] = TRUE;
-            $_SESSION['name'] = $_POST['username'];
-            $_SESSION['id'] = $id;
-            echo 'Bienvenido ' . $_SESSION['name'] . '!';
-        } else {
-
-            echo 'Usuario o password incorrecto!';
-        }
+    if ($_POST['password'] == $results['password']) {
+        $_SESSION['user_id'] = $results['id'];
+        $message = 'SESION INICIADA';
+        echo($message);
     } else {
-        echo 'Usuario o password incorrecto!';
+        $message = 'Disculpa, las credenciales no coinciden';
+        echo($message);
+
     }
-    $stmt->close();
+    header('Location: /home');
+
 }
-?>

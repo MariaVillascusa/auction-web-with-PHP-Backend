@@ -1,23 +1,32 @@
 <?php
-session_start();
+if (session_status() !== PHP_SESSION_NONE) {
+    session_start();
+}
+
+require 'databaseconnect.php';
+
 if (isset($_SESSION['user_id'])) {
+
     $records = $conn->prepare('SELECT id, username, password FROM users WHERE id = :id');
     $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
     $user = null;
-
     if (count($results) > 0) {
         $user = $results;
     }
-    var_dump($user);
 }
 ?>
+
 <?php require_once 'header.php'; ?>
     <link rel="stylesheet" href="css/index.css">
     <title>SUBASTAS WEB</title>
 
+<?php require_once 'nav.php'; ?>
+    <div>
+        <span id="loading">CARGANDO...</span>
+    </div>
 <?php if(!empty($user)): ?>
     <br> Hola, <?= $user['username']; ?>
     <br>Has iniciado sesión correctamente
@@ -25,12 +34,6 @@ if (isset($_SESSION['user_id'])) {
         Logout
     </a>
 <?php endif; ?>
-
-<?php require_once 'nav.php'; ?>
-    <div>
-        <span id="loading">CARGANDO...</span>
-    </div>
-
     <div class="container-xxl" id="container">
 
     </div>
