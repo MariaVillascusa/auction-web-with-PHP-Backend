@@ -15,6 +15,14 @@
             <a class="nav-link" id="link" href="/register">Regístrate</a>
             <a class="nav-link" id="link" href="/login">Log in</a>
         </div>
+        <div id="nav-login">
+            <?php if(!empty($user)): ?>
+                <h6> Hola, <?= $user['username']; ?></h6>
+                <a href="/logout" id="link">
+                    Logout
+                </a>
+            <?php endif; ?>
+        </div>
         <form class="d-flex">
             <input class="form-control me-2" id="search" type="search" placeholder="Buscar" aria-label="Search">
             <button class="bttn" id="search-btn" type="submit">Buscar</button>

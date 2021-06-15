@@ -2,7 +2,9 @@ body {
   background: #f5f5f7;
   font-family: roboto, sans-serif;
 }
-
+h6{
+  color:white !important;
+}
 #link {
   color: white;
   float: left;
@@ -86,3 +88,4 @@ h1 {
 .price {
   display: inline;
 }
+

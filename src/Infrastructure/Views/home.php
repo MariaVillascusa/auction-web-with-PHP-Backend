@@ -28,7 +28,7 @@ if (isset($_SESSION['user_id'])) {
         <span id="loading">CARGANDO...</span>
     </div>
 <?php if(!empty($user)): ?>
-    <br> Hola, <?= $user['username']; ?>
+    <h5> Hola, <?= $user['username']; ?></h5>
     <br>Has iniciado sesión correctamente
     <a href="/logout">
         Logout
