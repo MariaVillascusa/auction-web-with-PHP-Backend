@@ -1,4 +1,7 @@
-<?php require_once 'header.php'; ?>
+<?php
+require_once 'header.php';
+require 'session.php';
+?>
 
 <link rel="stylesheet" href="./css/register.css">
 <title>SUBASTAS WEB</title>

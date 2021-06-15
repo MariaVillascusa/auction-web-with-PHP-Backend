@@ -1,7 +1,10 @@
-<?php require_once 'header.php'; ?>
-    <link rel="stylesheet" href="css/sell.css">
+<?php
+require 'session.php';
+require_once 'header.php';
+?>
+<link rel="stylesheet" href="css/sell.css">
 
-    <title>SUBASTAS WEB</title>
+<title>SUBASTAS WEB</title>
 
 <?php require_once 'nav.php'; ?>
 

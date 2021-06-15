@@ -1,10 +1,12 @@
+<link rel="stylesheet" href="css/nav.css">
+
 </head>
 
 <body>
 
 <nav class="navbar navbar-dark bg-dark" id='navbar'>
     <div class="container-fluid">
-        <a class="navbar-brand">
+        <a class="navbar-brand" href="/home">
             <h1>SUBASTAS WEB</h1>
         </a>
 
@@ -15,9 +17,9 @@
             <a class="nav-link" id="link" href="/register">Regístrate</a>
             <a class="nav-link" id="link" href="/login">Log in</a>
         </div>
-        <div id="nav-login">
+        <div id="login-div">
             <?php if(!empty($user)): ?>
-                <h6> Hola, <?= $user['username']; ?></h6>
+                <p id="nav-login"> Hola, <?= $user['username']; ?></p>
                 <a href="/logout" id="link">
                     Logout
                 </a>
