@@ -93,7 +93,7 @@ require 'session.php';
                     <h6>Puja directa</h6>
                     <form class="justify-content-center" action="#">
                         <input class="form-control-sm" id="direct-input" type="text" placeholder="€" aria-label="bid">
-                        <button class="bttn" id='direct-bid-btn' type="button">Bid</button>
+                        <button class="bttn bid-btn" id='direct-bid-btn' type="button">PUJAR</button>
                     </form>
                 </div>
 

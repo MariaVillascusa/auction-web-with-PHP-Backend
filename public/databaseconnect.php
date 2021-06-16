@@ -4,7 +4,7 @@ session_start();
 $server = 'mysql';
 $username = 'root';
 $password = 'admin1234';
-$database = 'auction_php';
+$database = 'testdb';
 
 try {
     $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
