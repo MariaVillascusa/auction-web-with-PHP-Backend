@@ -2,7 +2,7 @@
 require 'session.php';
 require_once 'header.php';
 ?>
-<link rel="stylesheet" href="css/sell.css">
+<!--<link rel="stylesheet" href="css/sell.css">-->
 
 <title>SUBASTAS WEB</title>
 
@@ -10,9 +10,9 @@ require_once 'header.php';
 
 
 <div class="container-xxl" id="container">
-    <h1>Pon a la venta un artículo</h1>
+    <h1>Subastar artículo</h1>
     <div class="row g-3 align-items-center" id="sell">
-        <form id="form" action="/sell" method="POST">
+        <form id="form-sell" action="/sell" method="POST">
 
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre del producto:</label>
@@ -36,7 +36,7 @@ require_once 'header.php';
                 <input type="url" class="form-control" id="image" name="image">
             </div>
 
-            <button type="button" class="btn bttn" id="btn">Vender</button>
+            <button type="button" class="btn bttn" id="sell-btn">Subastar</button>
         </form>
     </div>
 

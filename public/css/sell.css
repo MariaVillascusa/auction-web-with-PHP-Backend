@@ -1,92 +1,40 @@
-* {
-  color: #212529;
-}
-
 body{
   background: #3f4047;
   font-family: roboto,sans-serif;
-}
-
-#link {
-  color: white;
-  float: left;
-}
-
-#pages{
-  margin-left: 5rem;
-}
-
-a h1{
-  font-family: Ubuntu;
-  margin: 0.1rem !important;
 }
 
 h1 {
   text-align: center;
   margin-top: 4rem;
   color: white;
-
 }
 
-#navbar {
-  padding: 0px;
-}
-
-.bttn,
-#bid-btn {
-  border: none;
+.sell-btn{
+  width: 6rem;
   background: #ffca28;
-  color: white;
-  height: 2.2rem;
-  width: 5rem;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  margin: 0.5rem;
-}
-
-.bttn:hover,
-#bid-btn:hover {
-  background: #fcbe03;
-}
-
-#bid-btn {
-  height: 2.5rem;
-}
-
-
-#search-btn {
-  background-color: #ffca28;
   color: #212529;
 }
 
-#search {
-  border-radius: 15px 15px !important;
-  color: black;
-  width: 11rem !important;
-  height: 2.2rem;
-  margin-right: 1rem;
-  margin-top: 0.55rem;
+.sell-btn:hover{
+  background: #fcbe03;
+  color: white;
 }
 
 #sell {
   text-align: center;
-  margin: auto;
-  width: 60%;
   background: transparent;
-  margin-top: 3rem;
-  padding: 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem;
   font-size: 1.2rem;
-  color: #3f4047;
+}
+
+#form-sell input {
+  margin: auto;
+  width: 50% !important;
 }
 
 label {
   text-align: center;
   color: white;
-
 }
 
-form input {
-  margin: auto;
-  width: 80% !important;
-  border-radius: 0px 0px !important;
-}

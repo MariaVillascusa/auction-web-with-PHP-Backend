@@ -1,46 +1,54 @@
-nav {
-}
-
 #navbar {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
-p {
-    color: white;
+nav p {
+  color: white;
 }
 
 a h1 {
-    font-family: Ubuntu, serif;
-    margin: 0.1rem !important;
+  font-family: Ubuntu, serif;
+  margin: 0.1rem !important;
 }
 
 #pages {
-    margin: auto;
+  margin: auto;
 }
 
 #login-div {
-    text-align: center;
-    margin-right: 2rem;
-    line-height: 0.5rem;
+  text-align: center;
+  margin-right: 2rem;
+  line-height: 0.5rem;
 }
 
 #link {
-    color: white;
-    float: left;
+  color: white;
+  float: left;
+}
+
+.bttn {
+  border: none;
+  height: 2.2rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  margin: 0.5rem;
 }
 
 #search-btn {
-    background-color: #ffca28;
-    color: #212529;
-    margin-right: 0;
+  background-color: #ffca28;
+  color: #212529;
+  margin-right: 0;
+  width: 5rem;
 }
 
 #search {
-    border-radius: 15px 15px !important;
-    color: black;
-    width: 11rem;
-    height: 2.2rem;
-    margin-right: 1rem;
-    margin-top: 0.55rem;
+  width: 12rem !important;
+  height: 2.2rem;
+  border-radius: 17px 17px !important;
+  margin: 0.5rem;
 }
 
+#form-nav {
+  text-align: center !important;
+  width: 20rem;
+}

@@ -1,33 +1,9 @@
 * {
   color: #212529;
 }
+
 body {
-  background: white;
-  font-family: roboto, sans-serif;
-}
-
-#link {
-  color: white;
-  float: left;
-}
-
-#pages {
-  margin: auto;
-}
-
-a h1 {
-  font-family: Ubuntu;
-  margin: 0.1rem !important;
-}
-
-h1 {
-  text-align: center;
-  margin-top: 4rem;
-  color: white;
-}
-
-#navbar {
-  padding: 0px;
+  background: white !important;
 }
 
 #loading {
@@ -35,7 +11,6 @@ h1 {
   padding: 1rem;
 }
 
-.bttn,
 #bid-btn {
   border: none;
   background: #9a90cd;
@@ -98,8 +73,8 @@ h6 {
 }
 
 div {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 #row-top,
@@ -174,22 +149,6 @@ p {
   margin-top: 0.8rem;
 }
 
-#search-btn {
-  background-color: #ffca28;
-  color: #212529;
-  margin-right: 0rem;
-
-}
-
-#search {
-  border-radius: 15px 15px;
-  color: black;
-  width: 11rem;
-  height: 2.2rem;
-  margin-right: 1rem;
-  margin-top: 0.55rem;
-}
-
 #div-bids {
   margin-top: 4.7rem;
   background-color: #f5f5f7;
@@ -209,18 +168,22 @@ p {
 
 .confirmbtn {
   background-color: #04aa6d;
+  width: 7rem;
 }
 
 .cancelbtn {
   background-color: #f44336;
+  width: 7rem;
+
 }
 
-.container {
+#product-container {
   padding: 16px;
   text-align: center;
 }
 
 .modal {
+  text-align: center;
   display: none;
   position: fixed;
   z-index: 1;
@@ -236,15 +199,17 @@ p {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto; /* 10% from the top, 15% from the bottom and centered */
   border: 3px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  height: 30%;
+  padding: 4rem;
 }
 
 .close {
   position: absolute;
   right: 35px;
-  top: 15px;
+  top: 105px !important;
   font-size: 40px;
   font-weight: bold;
   color: #f1f1f1;
@@ -267,5 +232,9 @@ p {
   .cancelbtn,
   .deletebtn {
     width: 100%;
+  }
+
+  nav p {
+    font-size: 1rem !important;
   }
 }

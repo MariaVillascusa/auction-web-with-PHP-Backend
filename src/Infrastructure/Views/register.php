@@ -3,15 +3,15 @@ require_once 'header.php';
 require 'session.php';
 ?>
 
-<link rel="stylesheet" href="./css/register.css">
+<!--<link rel="stylesheet" href="./css/register.css">-->
 <title>SUBASTAS WEB</title>
 
 <?php require_once 'nav.php'; ?>
 
 <div class="container-xxl" id="container">
-    <h1>Crea una cuenta</h1>
+    <h1>Crear cuenta</h1>
     <div class="row g-3 align-items-center" id="register">
-        <form id="form" action="/register" method="POST">
+        <form id="form-register" action="/register" method="POST">
 
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre completo</label>
@@ -31,7 +31,7 @@ require 'session.php';
                 <input type="password" class="form-control" id="password" name="password">
             </div>
 
-            <button type="button" class="btn bttn register-btn" id="btn">Registrarse</button>
+            <button type="button" class="btn bttn" id="register-btn">Registrarse</button>
         </form>
     </div>
 </div>

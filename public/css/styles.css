@@ -1,0 +1,87 @@
+body{
+    background: #3f4047;
+    font-family: roboto,sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 4rem;
+    color: white;
+}
+
+#sell-btn{
+    width: 7rem;
+    background: #ffca28;
+    color: #212529;
+}
+
+#sell-btn:hover{
+    background: #fcbe03;
+    color: white;
+}
+
+#sell {
+    text-align: center;
+    background: transparent;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#form-sell input {
+    margin: auto;
+    width: 40% !important;
+}
+
+label {
+    text-align: center;
+    color: white;
+}
+
+#register-btn {
+    width: 8rem;
+    background: #ffca28;
+    color: #212529;
+}
+
+#register-btn:hover {
+    background: #ffbf01;
+    color: white;
+}
+
+#register {
+    text-align: center;
+    background: transparent;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#form-register input {
+    margin:auto;
+    width:30% !important;
+}
+
+.login-btn {
+    width: 5rem;
+    background: #ffca28;
+    color: #212529;
+}
+
+.login-btn:hover {
+    background: #fcbe03;
+    color: white;
+}
+
+#login {
+    text-align: center;
+    background: transparent;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#form-login input {
+    margin: auto;
+    width: 30% !important;
+}

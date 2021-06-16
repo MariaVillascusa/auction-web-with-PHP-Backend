@@ -8,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
 ?>
 
 <?php require_once 'header.php'; ?>
-    <link rel="stylesheet" href="css/login.css">
+<!--    <link rel="stylesheet" href="css/login.css">-->
     <title>SUBASTAS WEB - login</title>
 <?php require_once 'nav.php'; ?>
 
@@ -19,9 +19,9 @@ if (isset($_SESSION['user_id'])) {
             <p> <?= $message ?></p>
         <?php endif; ?>
 
-        <h1>Inicia sesión</h1>
+        <h1>Iniciar sesión</h1>
         <div class="row g-3 align-items-center" id="login">
-            <form id="form" action="databaseconnect.php" method="POST">
+            <form id="form-login" action="databaseconnect.php" method="POST">
 
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
 
-                <button type="submit" class="btn bttn" id="btn">Entrar</button>
+                <button type="submit" class="btn bttn login-btn" id="btn">Entrar</button>
             </form>
         </div>
     </div>
