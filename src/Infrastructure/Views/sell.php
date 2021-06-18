@@ -43,7 +43,6 @@ require_once 'header.php';
 
 </div>
 <!-- Bootstrap Bundle with Popper -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
 <script type="module" src="/js/sell.js"></script>
 
 <?php require_once 'footer.php'; ?>

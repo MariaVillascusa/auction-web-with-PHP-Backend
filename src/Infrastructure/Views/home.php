@@ -1,4 +1,3 @@
-<?php require 'session.php'; ?>
 
 <?php require_once 'header.php'; ?>
     <link rel="stylesheet" href="css/index.css">
@@ -8,13 +7,7 @@
     <div>
         <span id="loading">CARGANDO...</span>
     </div>
-<?php if (!empty($user)): ?>
-    <h6> Hola, <?= $user['username']; ?></h6>
-    <br>Has iniciado sesión correctamente
-    <a href="/logout">
-        Logout
-    </a>
-<?php endif; ?>
+
     <div class="container-xxl" id="container">
 
     </div>

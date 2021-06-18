@@ -12,6 +12,12 @@
     "methods": ["GET"]
   },
   {
+    "name": "login_request",
+    "path": "/login-request",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\Session\\LoginRequestController::execute",
+    "methods": ["POST"]
+  },
+  {
     "name": "login",
     "path": "/login",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\LoginController::execute",
@@ -22,6 +28,14 @@
     "path": "/logout",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\LogoutController::execute",
     "methods": ["GET"]
+  },
+  {
+    "name": "get_session_info",
+    "path": "/session",
+    "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\Session\\InfoController::execute",
+    "methods": [
+      "GET"
+    ]
   },
   {
     "name": "register",

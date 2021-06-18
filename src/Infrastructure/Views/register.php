@@ -37,7 +37,7 @@ require 'session.php';
 </div>
 
 <!-- Bootstrap Bundle with Popper -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
 <script type="module" src="/js/register.js"></script>
 
 <?php require_once 'footer.php'; ?>

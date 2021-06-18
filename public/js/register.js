@@ -1,33 +1,17 @@
-const btn = document.getElementById("btn");
-const DIRECTION = "http://localhost:9900/users";
-
-btn.onclick = () => {
-  const NAME = document.getElementsByName("name")[0].value;
-  const USERNAME = document.getElementsByName("username")[0].value;
-  const EMAIL = document.getElementsByName("email")[0].value;
-  const PASSWORD = document.getElementsByName("password")[0].value;
-  
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    name: NAME,
-    username: USERNAME,
-    email: EMAIL,
-    password: PASSWORD,
-  });
-  
-  createUser(raw,myHeaders)
-
+const BTN = document.getElementById("register-btn");
+BTN.onclick = () => {
+  let form = document.getElementById("form-register");
+  let formData = new FormData(form);
+  createUser(formData)
 };
 
-function createUser(raw,headers) {
+function createUser(formData) {
     var requestOptions = {
         method: "POST",
-        headers: headers,
-        body: raw,
+        body: formData,
         redirect: "follow",
       };
-    fetch(DIRECTION, requestOptions)
+    fetch("http://localhost:9900/users", requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);

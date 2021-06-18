@@ -19,9 +19,11 @@ class CreateUserController
 
     public function execute(Request $request): Response
     {
-        $json = $request->getContent();
-        $data = json_decode($json, true);
-        $this->service->execute($data['name'],$data['username'], $data['email'], $data['password']);
+        $name = $request->get('name');
+        $username = $request->get('username');
+        $email = $request->get('email');
+        $password = $request->get('password');
+        $this->service->execute($name,$username,$email,$password);
         return new JsonResponse([], Response::HTTP_CREATED);
     }
 }

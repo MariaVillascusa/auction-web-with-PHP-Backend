@@ -40,7 +40,16 @@ class CsvUserRepository implements UserRepository
                 return $user;
             }
         }
+        return null;
+    }
 
+    public function findByUsername($username): ?User
+    {
+        foreach ($this->users as $user) {
+            if ($user->username() === $username) {
+                return $user;
+            }
+        }
         return null;
     }
 
@@ -72,5 +81,6 @@ class CsvUserRepository implements UserRepository
             new Role($data[5])
         );
     }
+
 
 }

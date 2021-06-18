@@ -3,7 +3,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: ies-la-cierva-mysql
+    container_name: auction-mysql
     working_dir: /application
     volumes:
       - .:/application
@@ -13,11 +13,11 @@ services:
       - MYSQL_USER=testuser
       - MYSQL_PASSWORD=admin1234
     ports:
-      - "9202:3306"
+      - "9902:3306"
 
   webserver:
     image: nginx:alpine
-    container_name: ies-la-cierva-webserver
+    container_name: auction-webserver
     working_dir: /application
     volumes:
       - .:/application
@@ -32,7 +32,7 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - '9283:80'
+      - '9983:80'
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: admin1234
@@ -40,7 +40,7 @@ services:
 
   php-fpm:
     build: phpdocker/php-fpm
-    container_name: ies-la-cierva-php-fpm
+    container_name: auction-php-fpm
     working_dir: /application
     volumes:
       - .:/application
@@ -52,6 +52,6 @@ services:
 
   mailhog:
     image: mailhog/mailhog:latest
-    container_name: ies-la-cierva-mailhog
+    container_name: auction-mailhog
     ports:
-      - "9225:8025"
+      - "9925:8025"

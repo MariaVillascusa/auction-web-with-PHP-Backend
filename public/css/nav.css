@@ -9,10 +9,16 @@ nav p {
 a h1 {
   font-family: Ubuntu, serif;
   margin: 0.1rem !important;
+  color: white !important;
 }
 
 #pages {
   margin: auto;
+}
+
+
+#login-link {
+  color: white !important;
 }
 
 #login-div {
@@ -39,6 +45,10 @@ a h1 {
   color: #212529;
   margin-right: 0;
   width: 5rem;
+}
+
+#search-btn:hover {
+  background-color: #FEDDBE;
 }
 
 #search {

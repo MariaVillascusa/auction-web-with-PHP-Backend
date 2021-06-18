@@ -19,7 +19,7 @@ a h1{
 
 .bid-btn {
   border: none;
-  background: #9a90cd;
+  background: #185ADB;
   color: white;
   height: 2.2rem;
   width: 5rem;
@@ -30,7 +30,7 @@ a h1{
 
 .bttn:hover,
 #bid-btn:hover {
-  background: #a8a0ce;
+  background: #2f72f1;
 }
 
 #bid-btn {
@@ -77,6 +77,10 @@ h6 {
   background-color: #ffca28;
   width: 8rem;
   height: 4rem;
+}
+
+#btn-purchase:hover{
+  background: #FEDDBE;
 }
 
 div {

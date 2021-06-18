@@ -1,38 +1,17 @@
-const BTN = document.getElementById("btn");
-const DIRECTION = "http://localhost:9900/products";
-
+const BTN = document.getElementById("sell-btn");
 BTN.onclick = () => {
-  const NAME = document.getElementsByName("name")[0].value;
-  const PRICE = document.getElementsByName("price")[0].value;
-  const DESCRIPTION = document.getElementsByName("description")[0].value;
-  let DATETIME = document.getElementsByName("datetime")[0].value;
-  const IMAGE = document.getElementsByName("image")[0].value;
-
-  const DATE = new Date(DATETIME)  //Formato ingles
-  
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  var raw = JSON.stringify({
-    name: NAME,
-    price: PRICE,
-    description: DESCRIPTION,
-    datetime: DATE,
-    image: IMAGE,
-  });
-  
-  createProduct(raw,myHeaders);
-
-  
+  let form = document.getElementById("form-sell");
+  let formData = new FormData(form);
+  createProduct(formData);
 };
 
-function createProduct(raw,headers) {
+function createProduct(formData) {
     var requestOptions = {
         method: "POST",
-        headers: headers,
-        body: raw,
+        body: formData,
         redirect: "follow",
       };
-    fetch(DIRECTION, requestOptions)
+    fetch("http://localhost:9900/products", requestOptions)
     .then(response => response.json())
     .then(result => {
             alert("El producto ha comenzado a subastarse")
