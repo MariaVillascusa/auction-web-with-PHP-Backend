@@ -1,6 +1,3 @@
-<?php
-require 'session.php';
-?>
 <!doctype html>
 <html lang="en">
 <head>

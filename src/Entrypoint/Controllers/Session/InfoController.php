@@ -11,6 +11,7 @@ class InfoController
 {
     public function execute(Request $request): Response
     {
+
         return new JsonResponse([
             'name' => $_SESSION['name'] ?? null,
             'username' => $_SESSION['username'] ?? null,

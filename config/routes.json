@@ -33,9 +33,7 @@
     "name": "get_session_info",
     "path": "/session",
     "controller": "\\IESLaCierva\\Entrypoint\\Controllers\\Session\\InfoController::execute",
-    "methods": [
-      "GET"
-    ]
+    "methods": ["GET"]
   },
   {
     "name": "register",

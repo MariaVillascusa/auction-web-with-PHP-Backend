@@ -16,6 +16,23 @@ a h1 {
   margin: auto;
 }
 
+#register-div {
+  margin-right: 1.5rem;
+  color: white !important;
+}
+
+#login-div{
+  color: white !important;
+}
+
+#login-div p{
+  /* color: white !important; */
+  margin-top: 1rem;
+}
+
+#register-link {
+  color: white !important;
+}
 
 #login-link {
   color: white !important;

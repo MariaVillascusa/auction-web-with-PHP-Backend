@@ -2,7 +2,6 @@
 </head>
 
 <body>
-
 <nav class="navbar navbar-dark bg-dark" id='navbar'>
     <div class="container-fluid">
         <a class="navbar-brand" href="/home">
@@ -13,8 +12,8 @@
             <a class="nav-link" id="link" href="/home">Home</a>
             <a class="nav-link" id="link" href="/sell">Vender</a>
             <a class="nav-link" id="link" href="#">Sobre nosotros</a>
-            <a class="nav-link" id="link" href="/register">Regístrate</a>
         </div>
+        <div id="register-div"></div>
         <div id="login-div"></div>
         <form class="d-flex nav" id="form-nav">
             <input class="form-control me-2" id="search" type="search" placeholder="Buscar" aria-label="Search">
@@ -22,3 +21,4 @@
         </form>
     </div>
 </nav>
+

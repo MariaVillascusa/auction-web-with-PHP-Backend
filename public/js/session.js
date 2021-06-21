@@ -9,22 +9,38 @@ export function getSessionInfo(callback) {
   fetch("http://localhost:9900/session", requestOptions)
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
       callback(response);
     });
 }
 
 export function showSessionInfo(session) {
-  let userElement = document.getElementById("login-div");
-  userElement.innerHTML = "";
+  let registerElement = document.getElementById("register-div");
+  let loginElement = document.getElementById("login-div");
+  registerElement.innerHTML = "";
+  loginElement.innerHTML = "";
   if (session.username === null) {
+    let registerLink = createRegisterLink();
+    registerElement.appendChild(registerLink);
     let loginLink = createLoginLink();
-    userElement.appendChild(loginLink);
+    loginElement.appendChild(loginLink);
   } else {
-    userElement.textContent = `Hello, ${session.name}`;
-    let logoutLink = createLogoutLink();
-    userElement.appendChild(logoutLink);
+    if (window.location.href === "http://localhost:9900/login") {
+      window.location.href = "/home";
+    }
+    registerElement.textContent = `Hola, ${session.name}`;
+    let pLogout = createLogoutLink();
+    loginElement.appendChild(pLogout);
+    
   }
+}
+
+function createRegisterLink() {
+  let registerLink = document.createElement("a");
+  registerLink.setAttribute("class", "link");
+  registerLink.setAttribute("id", "register-link");
+  registerLink.setAttribute("href", "/register");
+  registerLink.textContent = "Registro";
+  return registerLink;
 }
 
 function createLoginLink() {
@@ -37,10 +53,12 @@ function createLoginLink() {
 }
 
 function createLogoutLink() {
+  let pLogout = document.createElement("p");
   let logoutLink = document.createElement("a");
   logoutLink.setAttribute("href", "/logout");
   logoutLink.setAttribute("class", "link");
-  loginLink.setAttribute("id", "login-link");
+  logoutLink.setAttribute("id", "login-link");
   logoutLink.textContent = "Logout";
-  return logoutLink;
+  pLogout.appendChild(logoutLink);
+  return pLogout;
 }

@@ -6,11 +6,6 @@
 
     <div class="container-xxl" id="container">
 
-
-        <?php if (!empty($message)): ?>
-            <p> <?= $message ?></p>
-        <?php endif; ?>
-
         <h1>Iniciar sesión</h1>
         <div class="row g-3 align-items-center" id="login">
             <form id="form-login">
@@ -23,13 +18,12 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                <div id="login-error">Error</div>
+                <div id="login-error"></div>
                 <button type="button" class="btn bttn login-btn" id="login-btn">Entrar</button>
             </form>
         </div>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
-    <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
     <script type="module" src="js/login.js"></script>
 <?php require_once 'footer.php'; ?>
