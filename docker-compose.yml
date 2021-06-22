@@ -9,7 +9,7 @@ services:
       - .:/application
     environment:
       - MYSQL_ROOT_PASSWORD=admin1234
-      - MYSQL_DATABASE=testdb
+      - MYSQL_DATABASE=auction_php
       - MYSQL_USER=testuser
       - MYSQL_PASSWORD=admin1234
     ports:
