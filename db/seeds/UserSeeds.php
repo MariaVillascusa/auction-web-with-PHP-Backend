@@ -24,7 +24,7 @@ class UserSeeds extends AbstractSeed
                 [
                     'id' => uniqid(),
                     'name' => $faker->name,
-                    'username' => $faker->userName,
+                    'username' => $username,
                     'email' => $faker->email,
                     'password' => password_hash($username, PASSWORD_DEFAULT),
                     'role' => Role::USER

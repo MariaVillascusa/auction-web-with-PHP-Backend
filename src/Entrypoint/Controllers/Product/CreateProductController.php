@@ -3,6 +3,7 @@
 namespace IESLaCierva\Entrypoint\Controllers\Product;
 
 use IESLaCierva\Application\Product\CreateNewProduct\CreateNewProductService;
+use IESLaCierva\Infrastructure\Database\MyqlProductRepository;
 use IESLaCierva\Infrastructure\Files\CsvProductRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,7 +15,7 @@ class CreateProductController
 
     public function __construct()
     {
-        $this->service = new CreateNewProductService(new CsvProductRepository());
+        $this->service = new CreateNewProductService(new MyqlProductRepository());
     }
 
     public function execute(Request $request): Response

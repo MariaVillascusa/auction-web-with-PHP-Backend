@@ -27,9 +27,6 @@ class User implements \JsonSerializable
 
     public static function create(string $name, string $username, Email $email, string $password): User
     {
-        /*if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            throw new EmailNotValidException();
-        }*/
         return new self(uniqid(), $name, $username, $email, $password, new Role(Role::USER));
     }
 

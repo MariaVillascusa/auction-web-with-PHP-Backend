@@ -31,3 +31,14 @@ bash:
 
 logs:
 		docker-compose logs -f ${DOCKER_PHP_SERVICE}
+
+
+phinx-migrate:
+	docker-compose exec --user=${UID} ${DOCKER_PHP_SERVICE} sh -c "vendor/bin/phinx migrate"
+
+
+phinx-rollback:
+	docker-compose exec --user=${UID} ${DOCKER_PHP_SERVICE} sh -c "vendor/bin/phinx rollback"
+
+phinx-fixtures:
+	docker-compose exec --user=${UID} ${DOCKER_PHP_SERVICE} sh -c "vendor/bin/phinx seed:run"

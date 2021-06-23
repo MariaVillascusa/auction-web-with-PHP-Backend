@@ -10,6 +10,6 @@ class ProductNotFoundException extends \Exception implements NotFoundException
 {
     public function __construct()
     {
-        parent::__construct('User Not Found Exception');
+        parent::__construct('Product Not Found Exception');
     }
 }
