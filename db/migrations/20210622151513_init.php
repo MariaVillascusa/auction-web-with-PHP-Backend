@@ -28,15 +28,6 @@ final class Init extends AbstractMigration
                 role varchar(100),
                 PRIMARY KEY (`id`)
             );
-       
-            CREATE TABLE IF NOT EXISTS bids (
-                id varchar(13),
-                productId varchar(13) NOT NULL,
-                currentBid numeric NOT NULL,
-                datetime date NOT NULL,
-                PRIMARY KEY (id)
-            );
-            
             CREATE TABLE IF NOT EXISTS products (
                 id varchar(13),
                 name varchar(100) NOT NULL,
@@ -46,9 +37,23 @@ final class Init extends AbstractMigration
                 image varchar(255),
                 PRIMARY KEY (id)
             );
-            
+            CREATE TABLE IF NOT EXISTS bids (
+                id varchar(13),
+                productId varchar(13) NOT NULL,
+                currentBid numeric NOT NULL,
+                datetime date NOT NULL,
+                PRIMARY KEY (id)
+            );
+
             ALTER TABLE bids ADD
                 CONSTRAINT fk_bids FOREIGN KEY (productId) references products (id);  
         ");
+    }
+
+    public function down()
+    {
+        $this->execute('DROP TABLE users');
+        $this->execute('DROP TABLE products');
+        $this->execute('DROP TABLE bids');
     }
 }

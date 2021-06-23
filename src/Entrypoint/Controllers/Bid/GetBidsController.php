@@ -3,6 +3,7 @@
 namespace IESLaCierva\Entrypoint\Controllers\Bid;
 
 use IESLaCierva\Application\Bid\GetBids\GetBidsService;
+use IESLaCierva\Infrastructure\Database\MySqlBidRepository;
 use IESLaCierva\Infrastructure\Files\CsvBidRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +17,7 @@ class GetBidsController
     private GetBidsService $getBidsService;
 
     public function __construct(){
-        $this->service = new GetBidsService(new CsvBidRepository());
+        $this->service = new GetBidsService(new MySqlBidRepository());
     }
 
     public function execute(Request $request): Response
