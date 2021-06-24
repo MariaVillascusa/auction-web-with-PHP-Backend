@@ -16,25 +16,22 @@ class MySqlBidRepository extends AbstractMySqlRepository implements BidRepositor
         $stmt = $this->connection->prepare('SELECT * FROM bids WHERE productId = :productId');
         $stmt->execute(['productId' => $productId]);
         $productbids = [];
-
         while ($row = $stmt->fetch()) {
             $productbids[] = $this->hydrate($row);
-        }
-        if ($stmt->rowCount() === 0) {
-            $productbids = null;
         }
         return array_values($productbids);
     }
 
     public function save(Bid $bid): void
     {
-        $stmt = $this->connection->prepare('REPLACE INTO bids(id, productId,currentBid, datetime)
-                VALUES (:id, :productId, :currentBid, :datetime)');
+        $stmt = $this->connection->prepare('REPLACE INTO bids(id, productId, user,currentBid, datetime)
+                VALUES (:id, :productId,:user, :currentBid, :datetime)');
 
         $stmt->execute(
             [
                 'id' => $bid->id(),
                 'productId' => $bid->productId(),
+                'user' => $bid->user(),
                 'currentBid' => $bid->currentBid()->value(),
                 'datetime' => $bid->datetime()->format(DATE_ATOM)
             ]
@@ -46,6 +43,7 @@ class MySqlBidRepository extends AbstractMySqlRepository implements BidRepositor
         return new Bid(
             $data['id'],
             $data['productId'],
+            $data['user'],
             new CurrentBid($data['currentBid']),
             new \DateTimeImmutable($data['datetime'])
         );

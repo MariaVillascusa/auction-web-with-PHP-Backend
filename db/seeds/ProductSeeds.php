@@ -35,7 +35,7 @@ class ProductSeeds extends AbstractSeed
                 'name' => 'Apple TV',
                 'price' => '250',
                 'description' => 'Descripcion del apple TV última generacion',
-                'datetime' => '2021-08-01T00:00:00.000Z',
+                'datetime' => '2021-08-01',
                 'image' => 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-tv-4k-gallery1-thumb-202104_FMT_WHH?wid=1436&hei=850&fmt=jpeg&qlt=80&.v=1617752364000'
             ];
         $data[] =
@@ -43,8 +43,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'Watch 3',
                 'price' => '199',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-02T00:00:00.000Z',
+                'description' => 'eget.',
+                'datetime' => '2021-08-02',
                 'image' => 'https://www.smartwatchzone.net/wp-content/uploads/2020/09/huawei-watch-fit.jpg'
             ];
         $data[] =
@@ -52,8 +52,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'Ratón MX Master3',
                 'price' => '90',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-30T00:00:00.000Z',
+                'description' => 'Proin porttitor purus at quam porta hendrerit.',
+                'datetime' => '2021-08-30',
                 'image' => 'https://www.muycomputer.com/wp-content/uploads/2019/09/Logitech-MX-Master-3.jpg'
             ];
         $data[] =
@@ -61,8 +61,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'Hub para MacBook',
                 'price' => '75',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-28T00:00:00.000Z',
+                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet .',
+                'datetime' => '2021-08-28',
                 'image' => 'https://www.soydemac.com/wp-content/uploads/2018/11/hub-satechi-mac-830x493.jpg'
             ];
         $data[] =
@@ -70,8 +70,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'Webcam Logi',
                 'price' => '130',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-25T00:00:00.000Z',
+                'description' => 'Proin porttitor purus at quam porta hendrerit.  eleifend eget.',
+                'datetime' => '2021-08-25',
                 'image' => 'https://teletrabajohoy.es/wp-content/uploads/2020/09/151063-laptops-news-logitech-streamcam-is-a-webcam-aimed-at-streamers-and-content-creators-image1-7ttqhvuida.jpg'
             ];
         $data[] =
@@ -79,8 +79,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'Play Station 4',
                 'price' => '300',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-08T00:00:00.000Z',
+                'description' => 'Proin porttitor purus at quam porta hendrerit.  non convallis tortor eleifend eget.',
+                'datetime' => '2021-08-08',
                 'image' => 'https://cdn.pixabay.com/photo/2017/05/19/14/09/ps4-2326616_960_720.jpg'
             ];
         $data[] =
@@ -88,8 +88,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'PC sobremesa i5',
                 'price' => '750',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-07T00:00:00.000Z',
+                'description' => 'Proin porttitor purus at quam porta eleifend eget.',
+                'datetime' => '2021-08-07',
                 'image' => 'https://oficina10.top/imagenes/las-8-mejores-torres-de-ordenador-baratas.jpg'
             ];
         $data[] =
@@ -97,8 +97,8 @@ class ProductSeeds extends AbstractSeed
                 'id' => uniqid(),
                 'name' => 'iMac 24" 2020',
                 'price' => '1300',
-                'description' => 'Proin porttitor purus at quam porta hendrerit. Donec lobortis sem laoreet dui finibus sagittis. Curabitur eleifend egestas risus, vitae rhoncus lorem fermentum vel. Sed lectus sapien, convallis at gravida eu, dapibus vel nibh. Curabitur quis mi a eros venenatis tincidunt. Aenean posuere congue massa, sit amet mattis metus. Vivamus diam mi, vulputate non vulputate nec, elementum a ante. Vestibulum ut eros vehicula, dignissim velit sit amet, cursus nunc. Nullam eros risus, iaculis a elementum sit amet, cursus vel nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse et iaculis neque, et vulputate quam. Maecenas vehicula posuere nisi at bibendum. Donec convallis tortor purus, non convallis tortor eleifend eget.',
-                'datetime' => '2021-08-15T00:00:00.000Z',
+                'description' => 'Proin porttitor purus at quam porta hendrerit.',
+                'datetime' => '2021-08-15',
                 'image' => 'https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_960_720.jpg'
             ];
 

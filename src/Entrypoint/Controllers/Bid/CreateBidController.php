@@ -22,7 +22,7 @@ class CreateBidController
     {
         $json = $request->getContent();
         $data = json_decode($json, true);
-        $this->service->execute($data['productId'], $data['currentBid']);
+        $this->service->execute($data['productId'], $data['user'], $data['currentBid']);
         return new JsonResponse([], Response::HTTP_CREATED);
     }
 }

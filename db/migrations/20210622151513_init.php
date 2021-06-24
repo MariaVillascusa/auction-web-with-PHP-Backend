@@ -22,7 +22,7 @@ final class Init extends AbstractMigration
             CREATE TABLE IF NOT EXISTS users (
                 id varchar(13),
                 name varchar(200) NOT NULL,
-                username varchar(150) NOT NULL,
+                username varchar(150) NOT NULL unique ,
                 email varchar(255) NOT NULL,
                 password varchar(255) NOT NULL,
                 role varchar(100),
@@ -40,20 +40,23 @@ final class Init extends AbstractMigration
             CREATE TABLE IF NOT EXISTS bids (
                 id varchar(13),
                 productId varchar(13) NOT NULL,
+                user varchar(150) NOT NULL,
                 currentBid numeric NOT NULL,
                 datetime date NOT NULL,
                 PRIMARY KEY (id)
             );
 
             ALTER TABLE bids ADD
-                CONSTRAINT fk_bids FOREIGN KEY (productId) references products (id);  
+                CONSTRAINT fk1_bids FOREIGN KEY (productId) references products (id);  
+            ALTER TABLE bids ADD
+                CONSTRAINT fk2_bids FOREIGN KEY (user) references users (username); 
         ");
     }
 
     public function down()
     {
-        $this->execute('DROP TABLE users');
-        $this->execute('DROP TABLE products');
         $this->execute('DROP TABLE bids');
+        $this->execute('DROP TABLE products');
+        $this->execute('DROP TABLE users');
     }
 }

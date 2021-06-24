@@ -51,6 +51,7 @@ class CsvBidRepository implements BidRepository
         fputcsv($file, [
             $bid->id(),
             $bid->productId(),
+            $bid->user(),
             $bid->currentBid()->value(),
             $bid->datetime()->format(DATE_ATOM)
         ]);
@@ -62,8 +63,9 @@ class CsvBidRepository implements BidRepository
         return new Bid(
             $data[0],
             $data[1],
-            new CurrentBid($data[2]),
-            new \DateTimeImmutable($data[3])
+            $data[2],
+            new CurrentBid($data[3]),
+            new \DateTimeImmutable($data[4])
         );
     }
 

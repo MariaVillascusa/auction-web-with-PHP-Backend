@@ -17,9 +17,9 @@ class CreateNewBidService
         $this->bidRepository = $bidRepository;
     }
 
-    public function execute(string $productId, string $currentBid)
+    public function execute(string $productId, string $user, string $currentBid)
     {
-        $bid = Bid::create($productId, new CurrentBid($currentBid));
+        $bid = Bid::create($productId, $user, new CurrentBid($currentBid));
         $this->bidRepository->save($bid);
     }
 }

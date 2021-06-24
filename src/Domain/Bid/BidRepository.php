@@ -8,5 +8,5 @@ interface BidRepository
 {
     public function find(string $productId): array;
 
-    public function save(Bid $bid):void;
+    public function save(Bid $bid): void;
 }

@@ -12,6 +12,21 @@
 {% endblock %}
 
 {% block body %}
+    <div id="confirm" class="modal">
+        <span onclick="document.getElementById('confirm').style.display='none'" class="close"
+              title="Close Modal">&times;</span>
+        <form class="modal-content" action="#">
+            <div class="container">
+                <h2>Hacer puja</h2>
+                <p>Estás seguro de que quieres pujar por el artículo?</p>
+
+                <div class="clearfix">
+                    <button type="button" class="bttn cancelbtn" id="cancelbtn">Cancelar</button>
+                    <button type="button" class="bttn confirmbtn" id="confirmbtn">Pujar</button>
+                </div>
+            </div>
+        </form>
+    </div>
     <div>
         <span id="loading">CARGANDO...</span>
     </div>

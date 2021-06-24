@@ -1,5 +1,7 @@
 import * as articles from "./articles.js";
 import {updateCountdown, MILLISECONDS_OF_A_SECOND} from "./chrono.js";
+import {getSessionInfo} from "./session.js";
+
 
 var currentBid;
 var nextBid = currentBid + currentBid * 0.1;
@@ -29,9 +31,9 @@ const HOST = "http://localhost:9900/products/";
 const BIDS_DIRECTION = BID_HOST + ARTICLEID + "/bids";
 const DIRECTION = HOST + ARTICLEID;
 
-productRequest();
+getSessionInfo(productRequest);
 
-function productRequest() {
+function productRequest(session) {
     var requestOptions = {
         method: "GET",
         redirect: "follow",
@@ -46,8 +48,8 @@ function productRequest() {
             LOADING.style.display = "none";
             updateCountdown(DATETIME);
             setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
-            clickFastBid();
-            directBid();
+            clickFastBid(session);
+            directBid(session);
         });
 }
 
@@ -64,18 +66,18 @@ function bidsRequest() {
         .catch((error) => console.log("error", error));
 }
 
-function bid(currentBid) {
+function bid(currentBid, session) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify({
         productId: `${ARTICLEID}`,
+        user: `${session.username}`,
         currentBid: `${currentBid}`,
     });
     var requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
-        //redirect: "follow",
     };
     fetch(BIDS_DIRECTION, requestOptions)
         .then((response) => response.json())
@@ -86,7 +88,6 @@ function bid(currentBid) {
 }
 
 function getBids(data) {
-
     TABLE_BIDS.innerHTML = "";
     for (var i = data.length; i >= 0; i--) {
         var bid = data[i];
@@ -96,7 +97,7 @@ function getBids(data) {
             let tdBid = document.createElement("td");
             let tdTime = document.createElement("td");
 
-            tdUser.textContent = "User";
+            tdUser.textContent = bid["user"];
             tdBid.textContent = bid["currentBid"] + "€";
             tdTime.textContent = bid["datetime"];
 
@@ -155,28 +156,36 @@ export function setCurrentBid() {
     BTN3.textContent = Math.ceil(nextBid + nextBid * 0.1) + "€";
 }
 
-function clickFastBid() {
+function clickFastBid(session) {
     document.querySelectorAll(".click").forEach((element) => {
         element.addEventListener("click", (e) => {
             const id = e.target.getAttribute("id");
             const button = document.getElementById(id);
-            fastBid(button);
+            if (session.name == null) {
+                alert("Tienes que iniciar sesión para hacer una puja");
+            } else {
+                fastBid(button, session);
+            }
         });
     });
 }
 
-function fastBid(button) {
+function fastBid(button, session) {
     currentBid = button.textContent.slice(0, button.textContent.length - 1);
-    confirm();
+    confirm(session);
 }
 
-function directBid() {
+function directBid(session) {
     BTN_DIRECT_BID.onclick = () => {
-        validate();
+        if (session.name == null) {
+            alert("Tienes que iniciar sesión para hacer una puja");
+        } else {
+            validate(session);
+        }
     };
 }
 
-function validate() {
+function validate(session) {
     switch (true) {
         case INPUT_BID.value == "":
             ALERT.classList.remove("d-none");
@@ -196,17 +205,17 @@ function validate() {
         default:
             ALERT.classList.add("d-none");
             currentBid = INPUT_BID.value;
-            confirm();
+            confirm(session);
             break;
     }
     INPUT_BID.value = "";
 
 }
 
-function confirm() {
+function confirm(session) {
     CONFIRM_PANEL.style.display = "block";
     clickCancel();
-    clickConfirm();
+    clickConfirm(session);
 }
 
 function clickCancel() {
@@ -215,9 +224,9 @@ function clickCancel() {
     };
 }
 
-function clickConfirm() {
+function clickConfirm(session) {
     CONFIRM_BTN.onclick = () => {
         CONFIRM_PANEL.style.display = "none";
-        bid(currentBid);
+        bid(currentBid, session);
     };
 }
