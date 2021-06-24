@@ -1,9 +1,10 @@
+{% extends "base.twig" %}
 
-<?php require_once 'header.php'; ?>
-<!--    <link rel="stylesheet" href="css/login.css">-->
-    <title>SUBASTAS WEB - login</title>
-<?php require_once 'nav.php'; ?>
+{% block title %}
+    <title>SUBASTAS WEB - Login</title>
+{% endblock %}
 
+{% block body %}
     <div class="container-xxl" id="container">
 
         <h1>Iniciar sesión</h1>
@@ -23,7 +24,9 @@
             </form>
         </div>
     </div>
+{% endblock %}
 
-    <!-- Bootstrap Bundle with Popper -->
+{% block javascript %}
+{{ parent() }}
     <script type="module" src="js/login.js"></script>
-<?php require_once 'footer.php'; ?>
+{% endblock %}

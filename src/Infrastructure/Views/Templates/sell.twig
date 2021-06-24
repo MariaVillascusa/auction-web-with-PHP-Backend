@@ -1,13 +1,10 @@
-<?php
-require_once 'header.php';
-?>
-<!--<link rel="stylesheet" href="css/sell.css">-->
+{% extends "base.twig" %}
 
-<title>SUBASTAS WEB</title>
+{% block title %}
+    <title>SUBASTAS WEB - Subastar artículo</title>
+{% endblock %}
 
-<?php require_once 'nav.php'; ?>
-
-
+{% block body %}
 <div class="container-xxl" id="container">
     <h1>Subastar artículo</h1>
     <div class="row g-3 align-items-center" id="sell">
@@ -38,10 +35,9 @@ require_once 'header.php';
             <button type="button" class="btn bttn" id="sell-btn">Subastar</button>
         </form>
     </div>
+{% endblock %}
 
-
-</div>
-<!-- Bootstrap Bundle with Popper -->
+{% block javascript %}
+{{ parent() }}
 <script type="module" src="/js/sell.js"></script>
-
-<?php require_once 'footer.php'; ?>
+{% endblock %}

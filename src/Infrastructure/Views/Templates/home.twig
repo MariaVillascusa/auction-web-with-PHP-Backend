@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="css/index.css">
+{% endblock %}
+
+{% block title %}
+    <title>SUBASTAS WEB - Home</title>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <span id="loading">CARGANDO...</span>
+    </div>
+    <div class="container-xxl" id="container">
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script type="module" src="/js/chrono.js"></script>
+<script type="module" src="/js/index.js"></script>
+<script type="module" src="/js/articles.js"></script>
+{% endblock %}

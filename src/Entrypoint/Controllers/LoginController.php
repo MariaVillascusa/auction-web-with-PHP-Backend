@@ -11,10 +11,10 @@ class LoginController
 {
     public function execute(Request $request): Response
     {
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__.'/../../Infrastructure/Views/Templates');
+        $twig = new \Twig\Environment($loader,[]);
         $response = new Response();
-        ob_start();
-        require_once __DIR__ . '/../../Infrastructure/Views/login.php';
-        $response->setContent(ob_get_clean());
+        $response->setContent($twig->render('login.twig', []));
         return $response;
     }
 }
