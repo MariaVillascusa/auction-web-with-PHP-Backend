@@ -74,7 +74,8 @@ function createBtn(body, article) {
   let productBtn = document.createElement("a");
   productBtn.setAttribute("href", productLink);
   productBtn.setAttribute("class", "btn bttn click");
-  productBtn.setAttribute("id", article["id"]);
+  productBtn.setAttribute("productId", article["id"]);
+  productBtn.setAttribute("id", "buttonLink");
   productBtn.textContent = "Pujar";
   body.appendChild(productBtn);
 }

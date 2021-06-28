@@ -1,11 +1,10 @@
-
 body {
   background: white;
   font-family: roboto, sans-serif;
 }
 
-a h1{
-  color:white !important;
+a h1 {
+  color: white !important;
 }
 
 #nav-login {
@@ -19,7 +18,7 @@ a h1{
 
 .bid-btn {
   border: none;
-  background: #185ADB;
+  background: #185adb;
   color: white;
   height: 2.2rem;
   width: 5rem;
@@ -36,8 +35,6 @@ a h1{
 #bid-btn {
   height: 2.5rem;
 }
-
-
 
 #buttons {
   padding: 0.5rem;
@@ -79,8 +76,8 @@ h6 {
   height: 4rem;
 }
 
-#btn-purchase:hover{
-  background: #FEDDBE;
+#btn-purchase:hover {
+  background: #feddbe;
 }
 
 div {
@@ -93,10 +90,13 @@ div {
   padding: 0;
 }
 
-#description {
-  border-right: 5px solid white;
+#pdescription {
   background-color: white;
   color: #212529;
+}
+
+#purchase {
+  margin-bottom: 3rem;
 }
 
 #pdescription,
@@ -142,9 +142,9 @@ div {
   text-align: center;
   padding: 1rem;
 }
+
 p {
   text-align: center;
-  font-size: 1.5rem;
 }
 
 #done-auctions {
@@ -161,7 +161,7 @@ p {
   margin-top: 0.5rem;
 }
 
-#direct-bid-btn{
+#direct-bid-btn {
   padding-top: 3.5px !important;
   height: 2.3rem !important;
 }
@@ -173,7 +173,12 @@ p {
 }
 
 #p-price {
-  font-size: 2rem;
+  font-size: 2rem !important;
+}
+
+#datetime,
+#p-next {
+  font-size: 1.5rem;
 }
 
 .confirmbtn:hover {
@@ -191,7 +196,6 @@ p {
 .cancelbtn {
   background-color: #f44336;
   width: 7rem;
-
 }
 
 #product-container {
