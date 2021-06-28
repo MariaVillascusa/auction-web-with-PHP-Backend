@@ -7,27 +7,19 @@ searchBtn.addEventListener("click", () => {
 
 function searching() {
   const search = document.getElementById("search").value;
-  const size = search.length;
   getAllProducts((result) => {
     const offcanvas = document.getElementById("offcanvas");
     offcanvas.innerHTML = "";
     for (let i = 0; i < result.length; i++) {
-      let productName = result[i]["name"];
-      let str = productName.substr(0, size);
-      if (
-        search.length <= productName.length &&
-        search.length != 0 &&
-        productName.length != 0
-      ) {
-        if (search.toLowerCase() == str.toLowerCase()) {
-          renderSearch(result,i);
-        }
+      let index = result[i]["name"].toLowerCase().indexOf(search.toLowerCase());
+      if (index !== -1) {
+        renderSearch(result, i);
       }
     }
   });
 }
 
-function renderSearch(result,i) {
+function renderSearch(result, i) {
   const list = document.createElement("ul");
   const compList = document.createElement("li");
   const resultDiv = document.createElement("div");
