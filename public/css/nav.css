@@ -63,7 +63,7 @@ a h1 {
   margin-left: 0;
   margin-right: 0;
   width: 4rem;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 3px 3px 0px;
   height:2rem;
   margin-top: 0.6rem;
 
@@ -76,7 +76,7 @@ a h1 {
 #search {
   width: 12rem !important;
   height: 2rem;
-  border-radius: 5px 0px 0px 5px !important;
+  border-radius: 3px 0px 0px 3px !important;
   margin: 0;
   margin-top: 0.6rem;
   margin-right: 0 !important;

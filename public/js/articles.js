@@ -12,10 +12,13 @@ export function showArticles(data) {
 }
 
 function createImg(CARD, article) {
+  let imgDiv = document.createElement("div");
+  imgDiv.setAttribute("id", "img-div")
   let img = document.createElement("img");
   img.setAttribute("src", article["image"]);
   img.setAttribute("class", "card-img-top");
-  CARD.appendChild(img);
+  imgDiv.appendChild(img);
+  CARD.appendChild(imgDiv);
 }
 
 function createBody(CARD, article) {
